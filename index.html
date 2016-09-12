@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
+        <title></title>
+        <link rel="stylesheet" type="text/css" media="screen" href="css/master.css" />
+    </head>
+    <body>
+        <form>
+            dec2bin:<br /> <input type="text" id="_dec2bin" pattern="[0-9]*" style="font-size: 24px" /> <input type="text" id="dec2bin" readonly style="font-size: 24px" />
+            <br />
+            <br />
+            bin2dec:<br /> <input type="text" id="_bin2dec" pattern="[0-9]*" style="font-size: 24px" /> <input type="text" id="bin2dec" readonly style="font-size: 24px" />
+        </form>
+
+        <script>
+document.getElementById("_dec2bin").addEventListener("keyup", function(event){
+    var value2parse = document.getElementById("_dec2bin").value;
+    var value = "";
+
+    if (value2parse) {
+         value = parseInt(value2parse, 10).toString(2);
+    }    document.getElementById("dec2bin").value = value;
+});
+document.getElementById("_bin2dec").addEventListener("keyup", function(event){
+    var value2parse = document.getElementById("_bin2dec").value;
+    var value = "";
+
+    if (value2parse) {
+         value = parseInt(value2parse, 2).toString(10);
+    }    document.getElementById("bin2dec").value = value;
+});
+        </script>
+    </body>
+</html>
